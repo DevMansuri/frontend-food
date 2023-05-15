@@ -1,0 +1,35 @@
+<div class="comtainer">
+  <div class="details">
+    <h2>Login</h2>
+    <form [formGroup]="loginform" (ngSubmit)="submit()">
+
+    <div class="input-contianer">
+      <label for="email">Email</label>
+      <div>
+      <input type="email" placeholder="Email" formControlName="email">
+      </div>
+    </div>
+
+    <div class="error-list ">
+      <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.errors?.['required']">*email is required</div>
+      <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.errors?.['email']">*email format is not correct</div>
+    </div>
+
+    <div class="input-container">
+      <label for="password">Password</label>
+      <div>
+      <input type="password" placeholder="Password" formControlName="password">
+    </div>
+    </div>
+
+    <div class="error-list">
+      <div class="alert alert-danger" *ngIf="fc.password.touched && fc.password.errors?.['required']">*password is required</div>
+    </div>
+
+  <div class="button">
+    <button type="submit">Login</button>
+  </div>
+
+    </form>
+  </div>
+</div>

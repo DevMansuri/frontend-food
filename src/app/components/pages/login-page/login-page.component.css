@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 3rem;
+  }
+
+  .details{
+    width: 28rem;
+  }
+  h2 {
+    color: #616161;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .error-list{
+    color: red;
+  }
