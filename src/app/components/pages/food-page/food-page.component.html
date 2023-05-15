@@ -1,4 +1,8 @@
-<div class="container">
+<app-not-found
+[visible]="!food.id"
+notFoundMessage="Food Not found"
+resetLinkText="Back To HomePage"></app-not-found>
+<div *ngIf="food.id" class="container">
   <img [src]="food.imageUrl" [alt]="food.name">
 
   <div class="datails">
@@ -47,7 +51,7 @@
       </span>
     </div>
 
-    <button>Add To Cart</button>
+    <button (click)="addToCart()">Add To Cart</button>
 
 
   </div>
