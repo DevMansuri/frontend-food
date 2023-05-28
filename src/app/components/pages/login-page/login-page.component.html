@@ -2,18 +2,16 @@
   <div class="details">
     <h2>Login</h2>
     <form [formGroup]="loginform" (ngSubmit)="submit()">
-
-    <div class="input-contianer">
-      <label for="email">Email</label>
-      <div>
+      <input-container lable="Email">
       <input type="email" placeholder="Email" formControlName="email">
-      </div>
-    </div>
+      <input-validaton
+        [control]="fc.email"
+        [showErrorsWhen]="isSubmitted">
+      </input-validaton>
 
-    <div class="error-list ">
-      <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.errors?.['required']">*email is required</div>
-      <div class="alert alert-danger" *ngIf="fc.email.touched && fc.email.errors?.['email']">*email format is not correct</div>
-    </div>
+    </input-container>
+
+
 
     <div class="input-container">
       <label for="password">Password</label>
