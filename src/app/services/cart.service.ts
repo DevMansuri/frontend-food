@@ -45,6 +45,10 @@ private cartSubject:BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
     return this.cartSubject.asObservable();
   }
 
+  getCart() :Cart {
+    return this.cartSubject.value;
+  }
+
   private setCartToLocalStrorage():void {
     this.cart.totalPrice = this.cart.items.reduce((prevSum, currentItem) => prevSum +  currentItem.price ,0);
     this.cart.totalCount = this.cart.items.reduce((prevSum  ,currentItem) => prevSum + currentItem.quantity,0);
