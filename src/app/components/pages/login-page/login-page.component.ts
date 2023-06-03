@@ -18,8 +18,9 @@ export class LoginPageComponent implements OnInit {
     private activatedRoute : ActivatedRoute ,private router :Router) {
 
    }
-
   ngOnInit(): void {
+   console.log("Hello from food page")
+
     this.loginform = this.formBuilder.group( {
       email : ['', [Validators.required, Validators.email]],
       password : ['', Validators.required]
